@@ -8,6 +8,9 @@ const app = express();
 connectDB();
 app.use(cors());
 app.use(express.json()); // untuk parsing JSON
+app.get('/', (req, res) => {
+    res.send('Film Backend API is running ✅');
+  });
 app.use('/api/auth', authRoutes);
 app.use('/api/films', filmRoutes);
 const PORT = process.env.PORT || 5000;
